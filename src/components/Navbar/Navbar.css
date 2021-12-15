@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     font-size: 1.2 rem;
+    padding: 0 30px;
 }
 
 .navbar-logo{
@@ -12,6 +13,7 @@
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .fa-react{

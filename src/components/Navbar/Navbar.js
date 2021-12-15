@@ -25,7 +25,8 @@ class Navbar extends Component {
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+
+                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'} >
                     {MenuItems.map((item, index) => {
                         return (
                             <li key={index}>
@@ -36,11 +37,16 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
-                {
-                    this.props.isLogin ?
-                        <Link to="/signup" className="btn btn--primary btn--large" onClick={this.loginStateHandler}>Create Account</Link> :
-                        <Link to="/login" className="btn btn--primary btn--large" onClick={this.loginStateHandler}>LOGIN</Link>
-                }
+
+                <div>
+                    {
+
+                        this.props.isLogin ?
+                            <Link to="/signup" className="btn btn--primary btn--large" onClick={this.loginStateHandler}>Create Account</Link> :
+                            <Link to="/login" className="btn btn--primary btn--large" onClick={this.loginStateHandler}>LOGIN</Link>
+                    }
+                </div>
+
 
             </nav>
         )

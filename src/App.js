@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
-import Form from "./components/Form/Form";
+import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
 import Services from "./components/Services/Service.js";
 
@@ -21,13 +21,14 @@ function App() {
   }
   return (
     <div className="App">
-      {/* {isLogin ? <Form /> : <SignUp />} */}
+      {/* {isLogin ?  SignIn /> : <SignUp />} */}
       <Router>
         <Navbar isLogin={isLogin} toggleState={toggleLoginState} />
         <Routes>
           <Route path="/" element={<Services />} />
-          <Route path="/login" element={<Form />} />
+          <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          {/* <Route path="/banking" element={<Banking />} */}
           {/* default path , if not path exits */}
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>

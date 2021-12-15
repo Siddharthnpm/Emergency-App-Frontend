@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import './SignUp.css'
-function Form() {
+function SignUp() {
     const [name, setName] = useState("");
 
-    const [headingText, changeHeading] = useState("Hello");
+    const [email, setEmail] = useState("");
+
+    const [password, setPassword] = useState("");
 
 
     function handleChange(event) {
@@ -11,8 +13,29 @@ function Form() {
         setName(event.target.value);
     }
 
+    function handleChangeEmail(event) {
+        setEmail(event.target.value);
+    }
+
+    function handleChangePassword(event) {
+        setPassword(event.target.value);
+    }
+
     function handleClick() {
-        changeHeading("Hello " + name);
+        // changeHeading("Hello " + name);
+        // console.log(name);
+        // console.log(email);
+        // console.log(password);
+        const userDetails = {
+            name,
+            email,
+            password
+        };
+        console.log(userDetails);
+        setName("");
+        setEmail("");
+        setPassword("");
+        // return userDetails;
     }
 
     return (
@@ -22,16 +45,19 @@ function Form() {
                 onChange={handleChange}
                 type="text"
                 placeholder="What's your name?"
+                value={name}
             />
             <input className="form-input"
-                onChange={handleChange}
+                onChange={handleChangeEmail}
                 type="email"
                 placeholder="Enter your email"
+                value={email}
             />
             <input className="form-input"
-                onChange={handleChange}
+                onChange={handleChangePassword}
                 type="password"
                 placeholder="Enter your password"
+                value={password}
             />
             <button className="form-button"
                 onClick={handleClick}
@@ -42,4 +68,4 @@ function Form() {
         </div>
     );
 }
-export default Form;
+export default SignUp;

@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import './Form.css'
-function Form() {
+function SignIn() {
     const [name, setName] = useState("");
 
-    const [headingText, changeHeading] = useState("Hello");
+    const [email, setEmail] = useState("");
+
+    const [password, setPassword] = useState("");
 
 
     function handleChange(event) {
-        // console.log(event.target.value);
-        setName(event.target.value);
+        console.log(event.target.value);
+        // setName(event.target.value);
     }
 
     function handleClick() {
-        changeHeading("Hello " + name);
+        // changeHeading("Hello " + name);
     }
 
     return (
@@ -31,10 +33,11 @@ function Form() {
             <button className="form-button"
                 onClick={handleClick}
                 style={{ backgroundColor: "#6568f4" }}
+
             >
                 Submit
             </button>
         </div>
     );
 }
-export default Form;
+export default SignIn;

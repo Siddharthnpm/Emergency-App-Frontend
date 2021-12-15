@@ -30,3 +30,9 @@
  height: 120px;
 
 }
+
+.services-link{
+    text-decoration: underline;
+    font-weight: bold;
+    color: black;
+}

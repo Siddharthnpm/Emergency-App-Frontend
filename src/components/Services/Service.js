@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ServiceList } from "./ServiceList";
 import "./Service.css";
 
@@ -12,7 +13,7 @@ function Services() {
                     return (
                         <div className="service-card">
                             <img className="service-card-img" src={service.url} alt={service.about} />
-                            <h3>{service.title}</h3>
+                            <Link className="services-link" to={`/${service.title}`}>{service.title}</Link>
                         </div>
                     );
                 })}
