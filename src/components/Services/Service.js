@@ -13,7 +13,7 @@ function Services() {
                     return (
                         <div className="service-card">
                             <img className="service-card-img" src={service.url} alt={service.about} />
-                            <Link className="services-link" to={`/${service.title}`}>{service.title}</Link>
+                            <Link className="services-link" to='/Banking'>{service.title}</Link>
                         </div>
                     );
                 })}
@@ -24,3 +24,5 @@ function Services() {
     );
 }
 export default Services;
+
+// {`/${service.title}`}

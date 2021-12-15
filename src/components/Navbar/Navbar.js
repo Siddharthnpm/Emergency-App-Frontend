@@ -43,7 +43,7 @@ class Navbar extends Component {
 
                         this.props.isLogin ?
                             <Link to="/signup" className="btn btn--primary btn--large" onClick={this.loginStateHandler}>Create Account</Link> :
-                            <Link to="/login" className="btn btn--primary btn--large" onClick={this.loginStateHandler}>LOGIN</Link>
+                            <Link to="/login" className="btn btn--primary btn--large" onClick={this.loginStateHandler}>Login</Link>
                     }
                 </div>
 
