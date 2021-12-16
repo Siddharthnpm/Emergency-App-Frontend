@@ -1,0 +1,13 @@
+ul{
+    text-align: justify;
+}
+ul.privacy-list{
+    margin-left: 50px;
+}
+
+ul.privacy-list li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 100px;
+    margin-left: 15px;
+}

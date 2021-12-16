@@ -6,7 +6,7 @@
   }
   .dropdown .dropdown-btn {
     padding: 15px 20px;
-    margin-top: 50px;
+    margin-top: -35px;
     background: #fff;
     box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
     font-weight: bold;
@@ -19,7 +19,7 @@
   
   .dropdown .dropdown-content {
     position: absolute;
-    top: 110%;
+    top: 90%;
     left: 0;
     padding: 10px;
     background: #fff;
@@ -27,6 +27,7 @@
     font-weight: 500;
     color: #333;
     width: 100%;
+    z-index: 10;
   }
   .dropdown .dropdown-content .dropdown-item {
     padding: 10px;
