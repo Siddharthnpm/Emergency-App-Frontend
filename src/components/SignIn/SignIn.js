@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './Form.css'
 function SignIn() {
-    const [name, setName] = useState("");
 
     const [email, setEmail] = useState("");
 
@@ -9,12 +8,23 @@ function SignIn() {
 
 
     function handleChange(event) {
-        console.log(event.target.value);
-        // setName(event.target.value);
+        // console.log(event.target.value);
+        setEmail(event.target.value);
+    }
+
+    function handleChangePassword(event) {
+        setPassword(event.target.value);
     }
 
     function handleClick() {
         // changeHeading("Hello " + name);
+        const userDetails = {
+            email,
+            password
+        };
+        console.log(userDetails);
+        setEmail("");
+        setPassword("");
     }
 
     return (
@@ -24,11 +34,13 @@ function SignIn() {
                 onChange={handleChange}
                 type="email"
                 placeholder="What's your email?"
+                value={email}
             />
             <input className="form-input"
-                onChange={handleChange}
+                onChange={handleChangePassword}
                 type="password"
                 placeholder="Enter your password"
+                value={password}
             />
             <button className="form-button"
                 onClick={handleClick}
