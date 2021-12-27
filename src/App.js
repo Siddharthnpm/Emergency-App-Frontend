@@ -12,6 +12,7 @@ import SignUp from "./components/SignUp/SignUp";
 import Services from "./components/Services/Service.js";
 import Banking from "./components/Banking/Banking";
 import About from "./components/About/About.js";
+import AddContact from "./components/AddContact/AddContact";
 import './App.css';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/banking" element={<Banking />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<AddContact />} />
           {/* default path , if not path exits */}
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>

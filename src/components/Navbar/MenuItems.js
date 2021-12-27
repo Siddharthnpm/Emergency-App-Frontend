@@ -11,7 +11,7 @@ export const MenuItems = [
     },
     {
         title: 'Contact',
-        url: '/signup',
+        url: '/contact',
         cName: 'nav-links'
     },
     {

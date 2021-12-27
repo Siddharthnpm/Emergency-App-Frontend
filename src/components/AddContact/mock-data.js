@@ -1,0 +1,32 @@
+export const data = [
+    {
+        id: 1,
+        fullName: "Jenny Chan",
+        phoneNumber: "333-962-7516",
+        email: "jenny.chan@email.com"
+    },
+    {
+        id: 2,
+        fullName: "Jessica warren",
+        phoneNumber: "011-211-7516",
+        email: "jessica.warren@email.com"
+    },
+    {
+        id: 3,
+        fullName: "Tony Frank",
+        phoneNumber: "788-962-7516",
+        email: "tony.frank@email.com"
+    },
+    {
+        id: 4,
+        fullName: "Jeremy Clark",
+        phoneNumber: "011-962-111",
+        email: "jeremy.clark@email.com"
+    },
+    {
+        id: 5,
+        fullName: "Raymond Edwards",
+        phoneNumber: "3231-962-7516",
+        email: "raymon.edwards@email.com"
+    }
+]
