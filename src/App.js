@@ -13,14 +13,16 @@ import Services from "./components/Services/Service.js";
 import Banking from "./components/Banking/Banking";
 import About from "./components/About/About.js";
 import AddContact from "./components/AddContact/AddContact";
-import './App.css';
+import "./App.css";
+
+// this line is written by rohit
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
 
   const toggleLoginState = () => {
-    setIsLogin(prevState => !prevState);
-  }
+    setIsLogin((prevState) => !prevState);
+  };
   return (
     <div className="App">
       {/* {isLogin ?  SignIn /> : <SignUp />} */}
