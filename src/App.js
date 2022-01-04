@@ -12,6 +12,7 @@ import SignUp from "./components/SignUp/SignUp";
 import Services from "./components/Services/Service.js";
 import Banking from "./components/Banking/Banking";
 import Police from "./components/Police/Police";
+import Hospital from "./components/Hospital/Hospital";
 import About from "./components/About/About.js";
 import AddContact from "./components/AddContact/AddContact";
 import "./App.css";
@@ -36,6 +37,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/banking" element={<Banking />} />
           <Route path="/police" element={<Police />} />
+          <Route path="/hospital" element={<Hospital />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<AddContact />} />
           <Route path="/S.O.S" element={<Souls />} />
