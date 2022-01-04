@@ -1,0 +1,13 @@
+.police-page__title {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.police-page__map {
+    width: 600px;
+    margin: 30px auto;
+}
+
+.police-page__map iframe {
+    width: 100%;
+}
