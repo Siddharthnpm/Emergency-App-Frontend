@@ -15,6 +15,7 @@ import Police from "./components/Police/Police";
 import About from "./components/About/About.js";
 import AddContact from "./components/AddContact/AddContact";
 import "./App.css";
+import Souls from "./components/S.O.S/Souls";
 
 // this line is written by rohit
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/police" element={<Police />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<AddContact />} />
+          <Route path="/S.O.S" element={<Souls />} />
           {/* default path , if not path exits */}
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>

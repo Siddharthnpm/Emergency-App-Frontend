@@ -103,6 +103,33 @@ function Table() {
     }
 
     return <div className="app-container">
+        <h1 className="contact-heading">Add Your Contact</h1>
+        <form className="form-input-fields" onSubmit={handleAddFormSubmit}>
+            <input
+                type="text"
+                name="fullName"
+                placeholder="What's their name?"
+                onChange={handleAddFormChange}
+            />
+            <input
+                type="text"
+                name="email"
+                placeholder="What's their email?"
+                onChange={handleAddFormChange}
+            />
+            <input
+                type="tel"
+                name="phoneNumber"
+                placeholder="Enter their phone number"
+                onChange={handleAddFormChange}
+            />
+            <button
+
+                style={{ backgroundColor: "white", fontSize: "25px", color: "black" }}
+            >
+                Submit
+            </button>
+        </form>
         <form onSubmit={handleEditFormSubmit}>
             <table>
                 <thead>
@@ -131,7 +158,7 @@ function Table() {
                 </tbody>
             </table>
         </form>
-        <h1>Add Your Contact</h1>
+        {/* <h1>Add Your Contact</h1>
         <form onSubmit={handleAddFormSubmit}>
             <input
                 type="text"
@@ -145,12 +172,6 @@ function Table() {
                 placeholder="What's their email?"
                 onChange={handleAddFormChange}
             />
-            {/* <input className="form-input-addContact"
-            onChange={handleChangeEmail}
-            type="email"
-            placeholder="Enter their email (optional)"
-            value={email}
-        /> */}
             <input
                 type="tel"
                 name="phoneNumber"
@@ -163,7 +184,7 @@ function Table() {
             >
                 Submit
             </button>
-        </form>
+        </form> */}
     </div>
 }
 export default Table;

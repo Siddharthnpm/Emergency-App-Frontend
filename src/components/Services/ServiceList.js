@@ -23,7 +23,7 @@ export const ServiceList = [
     link: "/hospital",
   },
   {
-    title: "Driving Services",
+    title: "License-Related Services",
     url: licenseImg,
     about: "avatar_img",
     link: "/driving",

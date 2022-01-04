@@ -23,7 +23,30 @@ function Banking() {
             </h3>
             <p>
               To open a SBI savings account at any SBI Bank branch, customers
-              will have to follow the steps mentioned below.
+              will have to follow the steps mentioned below:
+              <ul>
+                <li>
+                  Visit the State Bank of India homepage. <a href="https://sbi.co.in/web/personal-banking/accounts/saving-account">Link</a>
+                </li>
+                <li>
+                  Click on “Apply Now”.
+                </li>
+                <li>
+                  Choose “ Sbi Savings Accounts”.
+                </li>
+                <li>
+                  Fill in the application form - name, address, date of birth and other various details - and click on submit.
+                </li>
+                <li>
+                  Once the details have been submitted, the bank will intimate the applicant to visit the branch will the requisite KYC documents - proof of identity and address.
+                </li>
+                <li>
+                  On submission of the documents, the bank will initiate the verification process.
+                </li>
+                <li>
+                  Following approval, the account will be activated within 3-5 bank working days.
+                </li>
+              </ul>
             </p>
           </div>
         )}
