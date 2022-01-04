@@ -1,6 +1,6 @@
 .dropdown {
-  width: 400px;
-  user-select: none;
+  width: 90%;
+  max-width: 800px;
   margin: 100px auto;
   position: relative;
 }
