@@ -9,6 +9,7 @@ import { useAuthContext } from "../../util/Context/AuthContext";
 function Table() {
   const { user } = useAuthContext();
   let apiUrl = "http://localhost:8000";
+  apiUrl = "https://emergency-app-test.herokuapp.com";
   //this piece of code can be used anywhere where you need a form (till return)
   const [contacts, setContacts] = useState([]);
 
