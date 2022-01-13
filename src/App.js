@@ -13,6 +13,9 @@ import Services from "./components/Services/Service.js";
 import Banking from "./components/Banking/Banking";
 import About from "./components/About/About.js";
 import AddContact from "./components/AddContact/AddContact";
+import AuthProvider, { useAuthContext } from "./util/Context/AuthContext";
+import useAuth from "./util/Hooks/useAuth";
+
 import "./App.css";
 
 // this line is written by rohit
@@ -24,8 +27,7 @@ function App() {
     setIsLogin((prevState) => !prevState);
   };
   return (
-    <div className="App">
-      {/* {isLogin ?  SignIn /> : <SignUp />} */}
+    <AuthProvider>
       <Router>
         <Navbar isLogin={isLogin} toggleState={toggleLoginState} />
         <Routes>
@@ -39,7 +41,7 @@ function App() {
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
       </Router>
-    </div>
+    </AuthProvider>
   );
 }
 

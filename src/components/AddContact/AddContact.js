@@ -1,10 +1,29 @@
 import React, { useState } from "react";
+import { useAuthContext } from "../../util/Context/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
 import Table from "./Table";
 import "./AddContact.css";
 
 function AddContact() {
-    return (<div className="container-addContact">
+  const { user } = useAuthContext();
+  const navigate = useNavigate();
+  if (!user) {
+    navigate("/signup");
+  }
+
+  return (
+    <div className="container-addContact">
+      {user ? (
         <Table />
-    </div>);
+      ) : (
+        <>
+          <h1>You Need to login first</h1>
+          <Link to="/login" className="btn btn--primary btn--large">
+            Go to Login
+          </Link>
+        </>
+      )}
+    </div>
+  );
 }
 export default AddContact;
