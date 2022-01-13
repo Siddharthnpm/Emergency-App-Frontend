@@ -9,7 +9,7 @@ export default function useAuth() {
   const [token, setToken] = useState();
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
 
-  const authorize = (name, token) => {
+  const authorize = (email, token) => {
     //   calculate token expiration time
     const tokenValidity = 1000 * 60 * 60; // 1 hour
     const currentDate = Date.now();
@@ -19,7 +19,7 @@ export default function useAuth() {
     localStorage.setItem(
       "userData",
       JSON.stringify({
-        name: name,
+        email: email,
         token: token,
         expiration: tokenExpirationDate,
       })
@@ -27,7 +27,7 @@ export default function useAuth() {
 
     // update state
     setUser({
-      name,
+      email: email,
     });
     setToken(token);
     setTokenExpirationDate(tokenExpirationDate);
@@ -65,7 +65,7 @@ export default function useAuth() {
       }
 
       if (token) {
-        authorize(name, token);
+        authorize(email, token);
       }
     } catch (err) {
       alert("Fetching Error");
@@ -96,7 +96,7 @@ export default function useAuth() {
         alert(message);
       }
       if (token) {
-        authorize("abc", token);
+        authorize(email, token);
       }
     } catch (err) {
       alert("Fetching Error");
@@ -126,7 +126,7 @@ export default function useAuth() {
       storedData.token &&
       new Date(storedData.expiration) > new Date()
     ) {
-      setUser({ name: storedData.name });
+      setUser({ email: storedData.email });
       setToken(storedData.token);
       setTokenExpirationDate(storedData.expiration);
     }

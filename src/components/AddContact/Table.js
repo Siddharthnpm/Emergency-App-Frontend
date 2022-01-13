@@ -1,13 +1,39 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import { nanoid } from "nanoid"; //generates a new id for us
 import { data } from "./mock-data";
 import EditableRow from "./EditableRow";
 import "./Table.css";
 import ReadOnlyRow from "./ReadOnlyRow";
+import { useAuthContext } from "../../util/Context/AuthContext";
 // import { Fragment } from "react/cjs/react.production.min";
 function Table() {
+  const { user } = useAuthContext();
+  let apiUrl = "http://localhost:8000";
   //this piece of code can be used anywhere where you need a form (till return)
-  const [contacts, setContacts] = useState(data);
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(async () => {
+    console.log(user);
+    if (!user.email) return;
+    try {
+      const reqUrl = `${apiUrl}/api/users/contacts`;
+      const response = await fetch(reqUrl, {
+        method: "post",
+        body: JSON.stringify({
+          email: user.email,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const userMessages = await response.json();
+      console.log(userMessages);
+      setContacts([...userMessages.contacts]);
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
 
   const [editContactId, setEditContactId] = useState(null);
 
@@ -35,18 +61,42 @@ function Table() {
     setAddFormData(newFormData);
   };
 
-  const handleAddFormSubmit = (event) => {
+  const handleAddFormSubmit = async (event) => {
     event.preventDefault();
 
+    // add new contacts
+
     const newContact = {
-      id: nanoid(),
       fullName: addFormData.fullName,
       email: addFormData.email,
       phoneNumber: addFormData.phoneNumber,
     };
 
-    const newContacts = [...contacts, newContact];
+    let newContacts = [...contacts, newContact];
     setContacts(newContacts);
+
+    try {
+      const reqUrl = `${apiUrl}/api/users/contacts/addcontact`;
+      const response = await fetch(reqUrl, {
+        method: "post",
+        body: JSON.stringify({
+          email: user.email,
+          contact: newContact,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
+
+    // if (contacts.length === 0) {
+    //   setContacts(newContact);
+    //   return;
+    // }
   };
 
   const handleEditFormChange = (event) => {
@@ -139,22 +189,23 @@ function Table() {
             </tr>
           </thead>
           <tbody>
-            {contacts.map((contact) => (
-              <>
-                {editContactId === contact.id ? (
-                  <EditableRow
-                    editFormData={editFormData}
-                    handleEditFormChange={handleEditFormChange}
-                  />
-                ) : (
-                  <ReadOnlyRow
-                    contact={contact}
-                    handleEditClick={handleEditClick}
-                    handleCallClick={handleCallClick}
-                  />
-                )}
-              </>
-            ))}
+            {contacts.length > 0 &&
+              contacts.map((contact) => (
+                <>
+                  {editContactId === contact.id ? (
+                    <EditableRow
+                      editFormData={editFormData}
+                      handleEditFormChange={handleEditFormChange}
+                    />
+                  ) : (
+                    <ReadOnlyRow
+                      contact={contact}
+                      handleEditClick={handleEditClick}
+                      handleCallClick={handleCallClick}
+                    />
+                  )}
+                </>
+              ))}
           </tbody>
         </table>
       </form>
