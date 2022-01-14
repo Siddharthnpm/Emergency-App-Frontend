@@ -1,56 +1,80 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuItems } from "./MenuItems";
-import Button from "../Button"
-import './Navbar.css'
-class Navbar extends Component {
-    state = { clicked: false }
+import Button from "../Button";
+import { useAuthContext } from "../../util/Context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
-    handleClick = () => {
-        this.setState({ clicked: !this.state.clicked })
-    }
+function Navbar(props) {
+  const { user, signout } = useAuthContext();
+  const navigate = useNavigate();
 
-    loginStateHandler = () => {
+  const [clicked, setClicked] = useState(false);
 
-        this.props.toggleState();
-    }
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
 
+  const loginStateHandler = () => {
+    props.toggleState();
+  };
 
+  const handleSignout = () => {
+    signout();
+    window.location.reload();
+  };
 
+  return (
+    <nav className="NavbarItems">
+      <h1 className="navbar-logo">
+        Emergency App<i className="fab fa-react"></i>
+      </h1>
+      <div className="menu-icon" onClick={handleClick}>
+        <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
+      </div>
 
-    render() {
-        return (
-            <nav className="NavbarItems">
-                <h1 className="navbar-logo">Emergency App<i className="fab fa-react"></i></h1>
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
-                </div>
+      <ul className={clicked ? "nav-menu active" : "nav-menu"}>
+        {MenuItems.map((item, index) => {
+          return (
+            <li key={index}>
+              <Link className={item.cName} to={item.url}>
+                {item.title}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
 
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'} >
-                    {MenuItems.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <Link className={item.cName} to={item.url}>
-                                    {item.title}
-                                </Link>
-                            </li>
-                        )
-                    })}
-                </ul>
-
-                <div>
-                    {
-
-                        this.props.isLogin ?
-                            <Link to="/signup" className="btn btn--primary btn--large" onClick={this.loginStateHandler}>Create Account</Link> :
-                            <Link to="/login" className="btn btn--primary btn--large" onClick={this.loginStateHandler}>Login</Link>
-                    }
-                </div>
-
-
-            </nav>
-        )
-    }
+      <div>
+        {user ? (
+          <Link
+            to="/"
+            className="btn btn--primary btn--large"
+            onClick={handleSignout}
+          >
+            Logout
+          </Link>
+        ) : props.isLogin ? (
+          <Link
+            to="/signup"
+            className="btn btn--primary btn--large"
+            onClick={loginStateHandler}
+          >
+            Create Account
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            className="btn btn--primary btn--large"
+            onClick={loginStateHandler}
+          >
+            Login
+          </Link>
+        )}
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

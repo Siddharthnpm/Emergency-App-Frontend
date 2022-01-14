@@ -15,6 +15,9 @@ import Police from "./components/Police/Police";
 import Hospital from "./components/Hospital/Hospital";
 import About from "./components/About/About.js";
 import AddContact from "./components/AddContact/AddContact";
+import AuthProvider, { useAuthContext } from "./util/Context/AuthContext";
+import useAuth from "./util/Hooks/useAuth";
+
 import "./App.css";
 import Souls from "./components/S.O.S/Souls";
 import DrivingServices from "./components/DrivingServices/drivingServices";
@@ -28,8 +31,7 @@ function App() {
     setIsLogin((prevState) => !prevState);
   };
   return (
-    <div className="App">
-      {/* {isLogin ?  SignIn /> : <SignUp />} */}
+    <AuthProvider>
       <Router>
         <Navbar isLogin={isLogin} toggleState={toggleLoginState} />
         <Routes>
@@ -47,7 +49,7 @@ function App() {
           <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
       </Router>
-    </div>
+    </AuthProvider>
   );
 }
 
