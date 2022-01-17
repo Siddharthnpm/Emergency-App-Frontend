@@ -101,8 +101,23 @@ function Banking() {
         </div>
         {isActive3 && (
           <div className="dropdown-content">
-            <div className="dropdown-item">Item 1</div>
-            <div className="dropdown-item">Item 2</div>
+            <h3>
+              Steps to close a bank account
+            </h3>
+            <p>
+              To close their SBI Bank Accounts, people have to do the following step(s).
+              <ul>
+                <li>
+                  You cannot close your SBI savings, salary, or current account online; you must visit the branch with the required letter or form, as well as ID documents, to close the account. You can download the account closure form from the SBI website.
+
+                  Mention the reason for your closure and submit all account-related items such as a debit card, a cheque book, and a passbook. Account closure fees may be charged by the bank depending on the account's tenure.
+
+                  Account holders who close their bank accounts after a year are not charged any fees by SBI. The account holder will have to pay fees if the SBI account is closed in between 15 days to one year; the account closure charge is Rs 500 pluis GST for savings account.
+
+                  For current accounts, the charge will be Rs 1,000 plus GST for tenure from 14 days to 1 year after account opening, and Rs 500 plus GST for tenure from 1 year to 5 years following account opening.
+                </li>
+              </ul>
+            </p>
           </div>
         )}
       </div>
@@ -113,8 +128,20 @@ function Banking() {
         </div>
         {isActive4 && (
           <div className="dropdown-content">
-            <div className="dropdown-item">Item 1</div>
-            <div className="dropdown-item">Item 2</div>
+            <h3>
+              Steps to get Internet Banking
+            </h3>
+            <p>
+              To enable Internet Banking in their SBI bank account, people have to do the following steps
+              <ul>
+                <li>
+                  Download the registration form to apply for Internet Banking facility. Complete and submit the form to the branch where you hold an account. The Branch Officer will guide you through the registration process and will issue the Internet Banking Kit.
+                </li>
+                <li>
+                  Visit the Internet Banking Page at SBI's official website. <a href="https://www.onlinesbi.com/personal/newuser_reg.html#:~:text=Download%20the%20registration%20form%20to,issue%20the%20Internet%20Banking%20Kit.">Link</a>
+                </li>
+              </ul>
+            </p>
           </div>
         )}
       </div>
