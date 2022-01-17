@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuthContext } from "../../util/Context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
 function SignUp() {
   const { user, signup } = useAuthContext();
@@ -82,6 +82,9 @@ function SignUp() {
       >
         Submit
       </button>
+      <Link className="auth-option" to="/login">
+        or, login
+      </Link>
       {loading && <h4>Submitting</h4>}
     </div>
   );

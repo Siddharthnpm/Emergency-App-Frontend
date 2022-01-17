@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 // import { useAuthContext } from "../../util/Context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../util/Context/AuthContext";
+
 import "./Form.css";
 function SignIn() {
   const { user, signin } = useAuthContext();
@@ -64,6 +65,9 @@ function SignIn() {
       >
         Submit
       </button>
+      <Link className="auth-option" to="/signup">
+        or, create account
+      </Link>
       {loading && <h4>Submitting</h4>}
     </div>
   );
