@@ -14,6 +14,8 @@ function SignIn() {
 
   const [password, setPassword] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   function handleChange(event) {
     // console.log(event.target.value);
     setEmail(event.target.value);
@@ -23,16 +25,19 @@ function SignIn() {
     setPassword(event.target.value);
   }
 
-  function handleClick() {
+  async function handleClick() {
+    if (loading) return;
+    setLoading(true);
     // changeHeading("Hello " + name);
     const userDetails = {
       email,
       password,
     };
     console.log(userDetails);
-    signin(email, password);
+    await signin(email, password);
     setEmail("");
     setPassword("");
+    setLoading(false);
   }
 
   return (
@@ -59,6 +64,7 @@ function SignIn() {
       >
         Submit
       </button>
+      {loading && <h4>Submitting</h4>}
     </div>
   );
 }
