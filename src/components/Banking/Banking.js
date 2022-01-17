@@ -59,32 +59,35 @@ function Banking() {
         {isActive2 && (
           <div className="dropdown-content">
             <h3>
-              Steps to Open a Savings Account with State Bank of India(SBI)
+              Steps to Send Money to People using WesternUnion Money Transfer
             </h3>
             <p>
-              To open a SBI savings account at any SBI Bank branch, customers
+              To send money to people using westernUnion money transfer, customers
               will have to follow the steps mentioned below:
               <ul>
                 <li>
-                  Visit the State Bank of India homepage. <a href="https://sbi.co.in/web/personal-banking/accounts/saving-account">Link</a>
+                  Visit the westernUnion homepage. <a href="https://www.westernunion.com/in/en/send-money.html">Link</a>
                 </li>
                 <li>
-                  Click on “Apply Now”.
+                  Click on “Start now”.
                 </li>
                 <li>
-                  Choose “ Sbi Savings Accounts”.
+                  Enter the amount you’d like to send.
                 </li>
                 <li>
-                  Fill in the application form - name, address, date of birth and other various details - and click on submit.
+                  Select ‘Send to a bank account’.
                 </li>
                 <li>
-                  Once the details have been submitted, the bank will intimate the applicant to visit the branch will the requisite KYC documents - proof of identity and address.
+                  Select your payment method.
                 </li>
                 <li>
-                  On submission of the documents, the bank will initiate the verification process.
+                  You’ll need your receiver’s bank details: bank name, code, and account number1.
                 </li>
                 <li>
-                  Following approval, the account will be activated within 3-5 bank working days.
+                  You can save your receiver’s details to make repeat transfers faster and easier.
+                </li>
+                <li>
+                  Make sure to check your details before hitting send. Once the money transfer is done, they'll email you a confirmation message with the Money Transfer Control Number (MTCN). Share the MTCN with only your intended receiver.
                 </li>
               </ul>
             </p>
