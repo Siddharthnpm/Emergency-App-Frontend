@@ -13,9 +13,9 @@ function DrivingServices() {
                                 src={service.url}
                                 alt={service.about}
                             />
-                            <Link className="services-link" to={service.link}>
+                            <a className="services-link" target="_blank" href={service.link}>
                                 {service.title}
-                            </Link>
+                            </a>
                         </div>
                     );
                 })}

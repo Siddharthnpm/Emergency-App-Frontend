@@ -63,6 +63,7 @@ export default function Police() {
               <b>Lost And Found</b>
             </h4>
             <a
+              target="_blank"
               className="link"
               href="https://lostfound.delhipolice.gov.in/LostApp/index.aspx"
             >
@@ -80,7 +81,7 @@ export default function Police() {
             <h4>
               <b>Telephone Directory</b>
             </h4>
-            <a className="link" href="https://www.delhipolice.nic.in/HELPLINE2">
+            <a target="_blank" className="link" href="https://www.delhipolice.nic.in/HELPLINE2">
               Click To Proceed
             </a>
           </div>
